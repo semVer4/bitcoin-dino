@@ -1,0 +1,54 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+	--index: calc(1vw + 1vh);
+}
+
+/* Контейнер с фоном */
+body {
+    position: relative;
+    height: 100vh;
+    background: url('../img/backsite.png') no-repeat center center/cover; /* Фон растягивается */
+}
+
+
+h1 {
+    color: red;
+    text-transform: uppercase;
+    font-size: calc(var(--index) * 1.3);
+    padding-top: 30%;
+    padding-left: 15%;
+}
+
+/* Стили для листиков */
+.leaf {
+    position: absolute;
+    width: calc(var(--index) * 13);
+    height: calc(var(--index) * 10.8);
+    background-size: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.leaf:hover {
+    width: calc(var(--index) * 13.5);
+    height: calc(var(--index) * 11.3);
+}
+
+.leaf-top {
+    background-image: url('../img/listup.png'); /* Изображение верхнего листика */
+    left: 0%; /* Расположение слева */
+    top: 5%; /* Расположение по вертикали */
+    
+}
+
+.leaf-bottom {
+    background-image: url('../img/listdown.png'); /* Изображение нижнего листика */
+    left: 0%; /* Расположение слева */
+    top: 28%; /* Расположение по вертикали */
+}
