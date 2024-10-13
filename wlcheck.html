@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LittleDinos - WL CHECK</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="img/PFP.png">
+</head>
+<body class="body-stone">
+    <div class="container">
+        <img src="img/back.png" class="backimg">
+
+        <div class="stone stone-left">
+            <div id="result"></div>
+        </div>
+
+        <form id="dataForm">
+            <input type="text" placeholder="Type your taproot address" id="centerInput" class="center-input">
+        </form>
+
+        <div class="stone stone-right">
+            <div id="load"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('centerInput').addEventListener('input', function() {
+          var inputData = document.getElementById("centerInput").value;
+          document.getElementById("load").innerHTML = "<span id='loading'>Loading...</span>";
+          setTimeout(function() {
+              var xhr = new XMLHttpRequest();
+              xhr.open("POST", "server.php", true);
+              xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+              xhr.onreadystatechange = function() {
+              if (xhr.readyState === 4 && xhr.status === 200) {
+                  document.getElementById("result").innerHTML = xhr.responseText;
+                  document.getElementById("load").innerHTML = "";
+              }
+          };
+          xhr.send("data=" + inputData);
+            }, 1000); 
+        });
+
+        document.querySelector('.backimg').addEventListener('click', function() {
+            window.location.href = "https://littledinos.xyz/";
+        });
+    </script>
+</body>
+</html>

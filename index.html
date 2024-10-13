@@ -3,22 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leaf Buttons</title>
+    <title>LittleDinos</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="img/PFP.png">
 </head>
-<body>
+<body class="leaf-body">
     <div class="container">
-        <div class="leaf leaf-top"><h1>test</h1></div>
-        <div class="leaf leaf-bottom"><h1>test</h1></div>
+        <div class="leaf leaf-top"></div>
+        <div class="leaf leaf-bottom"></div>
     </div>
 
-    <script>
-        document.querySelector('.leaf-top').addEventListener('click', function() {
-            alert('хуй1');
-        });
-    
+    <script>    
         document.querySelector('.leaf-bottom').addEventListener('click', function() {
-            alert('хуй2');
+            window.location.href = "wlcheck.html";
         });
     </script>
 </body>
