@@ -3,7 +3,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $data = $_POST["data"];
 
-    $url1 = "https://sheets.googleapis.com/v4/spreadsheets/$spreadsheetId1/values/A:B?key=$apiKey";
+    $url1 = "";
 
     $response1 = file_get_contents($url1);
 
